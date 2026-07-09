@@ -1,6 +1,6 @@
-# CNN-TFT-SHAP-MHAW
+# CNN-Transformer-SHAP-MHAW
 
-This repository presents a convolutional neural network with temporal fusion transformer (CNN-TFT) hypertunded by Baesyana optimization for time series forecasting. The optimized CNN-TFT model is available [here](https://github.com/SFStefenon/CNN-TFT/blob/main/CNN-TFT.py). 
+This repository presents a convolutional neural network with a transformer-based model hypertunded by Bayesian optimization for time series forecasting. The optimized model is available [here](https://github.com/SFStefenon/CNN-TFT/blob/main/CNN-TFT.py). 
 
 To compute the experiments and validate the model's performance, the natural inflow of the Tucurui hydroelectric power plant was considered (available [here](https://github.com/SFStefenon/CNN-TFT/blob/main/tucurui.csv)).
 
