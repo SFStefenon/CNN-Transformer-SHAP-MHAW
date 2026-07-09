@@ -98,11 +98,9 @@ def objective_function(CNN_layers, num_heads, filters, kernel_size):
     outputs = layers.Dense(1)(x)
     model = models.Model(inputs, outputs)
     model.compile(optimizer='adam', loss='mse', metrics=['mse'])
-    history = model.fit(X_train, y_train, epochs=epochs, batch_size=32,
-                        validation_split=0.2, verbose=1)
-    test_loss = model.evaluate(X_test, y_test, verbose=0)
-    # Return negative loss (since we maximize the objective)
-    return -np.sqrt(test_loss[1])
+    history = model.fit(X_train, y_train, epochs=epochs, batch_size=32, validation_split=0.2, verbose=1)
+    val_mse = min(history.history["val_mse"])
+    return -np.sqrt(val_mse)
 
 # Define parameter bounds
 pbounds = {
