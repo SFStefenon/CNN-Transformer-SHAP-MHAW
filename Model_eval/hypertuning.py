@@ -2,7 +2,6 @@ import torch
 import os
 device = torch.device("cuda:0")
 print(f"Using device: {device}")
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 window_size = 15
 epochs = 20
@@ -25,16 +24,6 @@ seed = 1
 np.random.seed(seed)
 random.seed(seed)
 tf.random.set_seed(seed)
-
-def performance(y_true, y_pred, time_s):
-    # Calculate metrics
-    rmse_v = rmse(y_true, y_pred)
-    mae_v = mean_absolute_error(y_true, y_pred)
-    mape_v = mean_absolute_percentage_error(y_true, y_pred)
-    msle_v = mean_squared_log_error(y_true, abs(y_pred))
-    # RMSE & MAE & MAPE & MSLE & time
-    result = (f'{rmse_v:.2E} & {mae_v:.2E} & {mape_v:.2E} & {msle_v:.2E} & {time_s:.2E} \\\\')
-    return result
 
 df = pd.read_csv("tucurui.csv", sep=";")
 df.columns = [col.strip() for col in df.columns]
